@@ -32,11 +32,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          git remote add upstream https://github.com/pepsico-ecommerce/setup-beam.git
+          git remote add upstream https://github.com/EYBlockchain/starlight.git
           git fetch upstream
-          git checkout main
-          git merge upstream/main --no-edit
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/ir-pranesh-shrestha/setup-beam-PepsiCo main
+          git checkout master
+          git merge upstream/master --no-edit
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/ir-pranesh-shrestha/starlight-EY master
           
       - name: Setup PSE
         uses: invisirisk/pse-action@latest
@@ -47,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '14.17.0'
 
       - name: Install dependencies
         run: npm install 
